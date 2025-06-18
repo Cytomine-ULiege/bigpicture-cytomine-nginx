@@ -141,6 +141,10 @@ http {
             set $tmpiamhost "$INTERNAL_URLS_IAM";
             proxy_pass http://$tmpiamhost;
         }
+        location = /iam/admin/realms/cytomine/identity-provider/import-config {
+            set $tmpiamhost "$INTERNAL_URLS_IAM";
+            proxy_pass http://$tmpiamhost;
+        }
         location ~ /(api|ws|server/ping|session/admin|custom-ui) {
             proxy_intercept_errors off;
 
